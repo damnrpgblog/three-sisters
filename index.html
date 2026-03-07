@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍺 Шотландский паб "Три Сестры" — Добро пожаловать! 🍺</title>
+    <style>
+        /* === WEB 1.0 GLORY === */
+        body {
+            background-color: #1a0a00;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' fill='%231a0a00'/%3E%3Crect x='0' y='0' width='20' height='20' fill='%231f0e02' opacity='0.5'/%3E%3Crect x='20' y='20' width='20' height='20' fill='%231f0e02' opacity='0.5'/%3E%3C/svg%3E");
+            color: #f0e0c0;
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a { color: #ffcc00; }
+        a:visited { color: #cc9900; }
+        a:hover { color: #ff6600; text-decoration: none; }
+
+        .main-table {
+            width: 780px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .header-cell {
+            background: linear-gradient(180deg, #2d1500, #4a2400, #2d1500);
+            border: 3px ridge #8B4513;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .header-cell h1 {
+            font-family: "Comic Sans MS", "Papyrus", cursive;
+            color: #FFD700;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px #000, 0 0 10px #ff8800;
+            margin: 5px 0;
+            letter-spacing: 2px;
+        }
+
+        .header-cell .subtitle {
+            color: #ccaa77;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .nav-cell {
+            background: #3a1a00;
+            border: 2px ridge #8B4513;
+            text-align: center;
+            padding: 6px;
+        }
+
+        .nav-cell a {
+            display: inline-block;
+            background: linear-gradient(180deg, #5a3000, #3a1800);
+            color: #FFD700 !important;
+            text-decoration: none;
+            padding: 5px 18px;
+            margin: 2px 5px;
+            border: 2px outset #8B4513;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: "Comic Sans MS", cursive;
+        }
+
+        .nav-cell a:hover {
+            background: linear-gradient(180deg, #7a4500, #5a3000);
+            border-style: inset;
+            color: #fff !important;
+        }
+
+        .nav-cell a.active {
+            background: linear-gradient(180deg, #7a4500, #5a3000);
+            border-style: inset;
+            color: #fff !important;
+        }
+
+        .marquee-cell {
+            background: #000;
+            border: 2px ridge #8B4513;
+            padding: 4px;
+            color: #00ff00;
+            font-size: 14px;
+            font-family: "Courier New", monospace;
+        }
+
+        .content-row td {
+            border: 2px ridge #8B4513;
+            vertical-align: top;
+        }
+
+        .sidebar {
+            width: 180px;
+            background: #2a1200;
+            padding: 10px;
+            font-size: 13px;
+        }
+
+        .sidebar h3 {
+            color: #FFD700;
+            font-family: "Comic Sans MS", cursive;
+            font-size: 15px;
+            text-align: center;
+            border-bottom: 1px dashed #8B4513;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 3px 0;
+        }
+
+        .sidebar ul li::before {
+            content: "🍺 ";
+        }
+
+        .main-content {
+            background: #1e0d00;
+            padding: 15px 20px;
+        }
+
+        .main-content h2 {
+            color: #FFD700;
+            font-family: "Comic Sans MS", cursive;
+            font-size: 22px;
+            border-bottom: 2px solid #8B4513;
+            padding-bottom: 5px;
+        }
+
+        .main-content h3 {
+            color: #ffaa33;
+            font-family: "Comic Sans MS", cursive;
+            font-size: 17px;
+        }
+
+        .footer-cell {
+            background: linear-gradient(180deg, #2d1500, #1a0a00);
+            border: 2px ridge #8B4513;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #887755;
+        }
+
+        .blink {
+            animation: blinker 1s step-start infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        .fire-emoji {
+            animation: fireAnim 0.5s ease-in-out infinite alternate;
+            display: inline-block;
+        }
+
+        @keyframes fireAnim {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
+        .guestbook-line {
+            border-bottom: 1px dotted #554433;
+            padding: 6px 0;
+            font-size: 13px;
+        }
+
+        .guestbook-line .author {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .guestbook-line .date {
+            color: #886644;
+            font-size: 11px;
+        }
+
+        .counter-box {
+            display: inline-block;
+            background: #000;
+            border: 2px inset #555;
+            padding: 2px 8px;
+            font-family: "Courier New", monospace;
+            color: #00ff00;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .construction {
+            color: #ffff00;
+            font-size: 13px;
+            animation: blinker 1.5s step-start infinite;
+        }
+
+        .hr-fancy {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8B4513, #FFD700, #8B4513, transparent);
+            margin: 15px 0;
+        }
+
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .menu-table th {
+            background: #3a1a00;
+            color: #FFD700;
+            padding: 6px 10px;
+            border: 1px solid #8B4513;
+            font-family: "Comic Sans MS", cursive;
+            text-align: left;
+        }
+
+        .menu-table td {
+            padding: 5px 10px;
+            border: 1px solid #553311;
+            background: #2a1200;
+        }
+
+        .menu-table tr:hover td {
+            background: #3a1a00;
+        }
+
+        .stars {
+            color: #FFD700;
+            letter-spacing: 2px;
+        }
+
+        .badge-new {
+            background: #ff0000;
+            color: #fff;
+            font-size: 10px;
+            padding: 1px 5px;
+            font-weight: bold;
+            border-radius: 3px;
+            animation: blinker 1s step-start infinite;
+        }
+
+        .page { display: none; }
+        .page.active { display: block; }
+
+        .tartan-border {
+            border: 4px double #8B4513;
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(42, 18, 0, 0.7);
+        }
+
+        .welcome-img {
+            display: block;
+            margin: 10px auto;
+            border: 3px ridge #8B4513;
+            background: #2a1200;
+            padding: 10px;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .ascii-art {
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            color: #FFD700;
+            line-height: 1.2;
+            white-space: pre;
+            text-align: center;
+        }
+
+        .webring {
+            border: 2px ridge #8B4513;
+            background: #2a1200;
+            padding: 8px;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .email-link {
+            font-family: "Courier New", monospace;
+            color: #00ccff !important;
+        }
+
+        marquee {
+            overflow: hidden;
+        }
+
+        .hierarchical-list {
+            margin-left: 15px;
+        }
+
+        .hierarchical-list li {
+            margin: 3px 0;
+        }
+
+        .hierarchical-list li::marker {
+            color: #FFD700;
+        }
+
+        input, textarea {
+            background: #1a0a00;
+            border: 2px inset #8B4513;
+            color: #f0e0c0;
+            font-family: "Courier New", monospace;
+            padding: 3px;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(180deg, #5a3000, #3a1800);
+            border: 2px outset #8B4513;
+            color: #FFD700;
+            padding: 4px 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            border-style: inset;
+        }
+    </style>
+</head>
+<body>
+
+<table class="main-table" cellpadding="0" cellspacing="0">
+    <!-- HEADER -->
+    <tr>
+        <td colspan="2" class="header-cell">
+            <div style="font-size: 24px;">🏴󠁧󠁢󠁳󠁣󠁴󠁿 🍺 🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>
+            <h1>~ Паб "Три Сестры" ~</h1>
+            <div class="subtitle">Настоящий шотландский паб с 1998 года | Единственный и неповторимый!</div>
+            <div style="font-size: 11px; color: #886644; margin-top: 5px;">
+                *** Лучший паб по версии журнала "Пивной Гурман" 2002, 2003, 2004 ***
+            </div>
+        </td>
+    </tr>
+
+    <!-- NAVIGATION -->
+    <tr>
+        <td colspan="2" class="nav-cell">
+            <a href="#" onclick="showPage('home'); return false;" id="nav-home" class="active">🏠 Главная</a>
+            <a href="#" onclick="showPage('menu'); return false;" id="nav-menu">🍽️ Меню и Карта</a>
+        </td>
+    </tr>
+
+    <!-- MARQUEE -->
+    <tr>
+        <td colspan="2" class="marquee-cell">
+            <marquee behavior="scroll" direction="left" scrollamount="3">
+                ★★★ ВНИМАНИЕ! Каждую пятницу — живая волынка! ★★★ Новинка: виски "Laphroaig 18 Years" уже в нашем баре! ★★★ Дартс-турнир каждую среду в 20:00! ★★★ Счастливые часы: пн-чт с 17:00 до 19:00 — скидка 20% на пиво! ★★★ Трансляция матчей Шести Наций — регби на большом экране! ★★★
+            </marquee>
+        </td>
+    </tr>
+
+    <!-- CONTENT -->
+    <tr class="content-row">
+        <!-- SIDEBAR -->
+        <td class="sidebar">
+            <h3>☘️ Навигация</h3>
+            <ul>
+                <li><a href="#" onclick="showPage('home'); return false;">Главная</a></li>
+                <li><a href="#" onclick="showPage('menu'); return false;">Меню</a></li>
+            </ul>
+
+            <br>
+            <h3>🕐 Часы работы</h3>
+            <div style="text-align:center; font-size: 12px; line-height: 1.6;">
+                Пн-Чт: 12:00 — 01:00<br>
+                Пт-Сб: 12:00 — 03:00<br>
+                Вс: 14:00 — 00:00<br>
+                <span style="color:#ff6600; font-size:11px;">(Кухня до 23:00)</span>
+            </div>
+
+            <br>
+            <h3>📞 Контакты</h3>
+            <div style="text-align:center; font-size: 12px; line-height: 1.6;">
+                Тел: (095) 555-33-12<br>
+                Факс: (095) 555-33-13<br>
+                <a href="mailto:info@3sisters.ru" class="email-link">info@3sisters.ru</a>
+            </div>
+
+            <br>
+            <h3><span class="fire-emoji">🔥</span> Новости</h3>
+            <div style="font-size: 11px; line-height: 1.5;">
+                <b style="color:#ff6600;">[12.03.04]</b> Новый сорт эля в кранах!<br><br>
+                <b style="color:#ff6600;">[05.03.04]</b> Фотоотчёт с вечера Бёрнса <span class="badge-new">NEW!</span><br><br>
+                <b style="color:#ff6600;">[28.02.04]</b> Поздравляем победителей дартс-турнира!<br><br>
+                <b style="color:#ff6600;">[14.02.04]</b> День Св. Валентина — романтический ужин для двоих!
+            </div>
+
+            <br>
+            <div class="webring">
+                <b style="color:#ffcc00;">⟵ WebRing ⟶</b><br>
+                <span style="font-size:11px;">Кольцо Пабов Рунета</span><br>
+                <a href="#">« Пред.</a> |
+                <a href="#">Случ.</a> |
+                <a href="#">След. »</a>
+            </div>
+
+            <br>
+            <div style="text-align:center;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%23000' stroke='%23555' stroke-width='1'/%3E%3Ctext x='44' y='12' fill='%2300ff00' font-size='8' font-family='monospace' text-anchor='middle'%3EAntiSpam%3C/text%3E%3Ctext x='44' y='24' fill='%2300ff00' font-size='8' font-family='monospace' text-anchor='middle'%3EVerified%3C/text%3E%3C/svg%3E" alt="AntiSpam"><br><br>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%23003' stroke='%23336' stroke-width='1'/%3E%3Ctext x='44' y='12' fill='%230099ff' font-size='7' font-family='monospace' text-anchor='middle'%3EBEST VIEWED%3C/text%3E%3Ctext x='44' y='22' fill='%230099ff' font-size='7' font-family='monospace' text-anchor='middle'%3E800x600%3C/text%3E%3C/svg%3E" alt="Best viewed 800x600">
+            </div>
+        </td>
+
+        <!-- MAIN CONTENT -->
+        <td class="main-content">
+
+            <!-- ==================== PAGE 1: HOME ==================== -->
+            <div id="page-home" class="page active">
+
+                <h2>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Добро пожаловать в паб "Три Сестры"!</h2>
+
+                <div class="welcome-img">
+                    <div class="ascii-art">
+         _______________________________
+        |  ___________________________  |
+        | |  THREE    ___   SISTERS   | |
+        | |  ___     |   |    ___     | |
+        | | | W |    | D |   | W |    | |
+        | | |___|    | O |   |___|    | |
+        | |          | O |            | |
+        | |   []     | R |     []     | |
+        | |__________|___|____________| |
+        |_______________________________|
+        |  |[]    ___________    []|    |
+        |  |     |  WELCOME  |    |    |
+        |  |     |___________|    |    |
+        |__|__________________________|_|
+                    </div>
+                    <div style="font-size: 11px; color: #886644; margin-top: 5px;">Фасад нашего паба. Фото скоро будет загружено!</div>
+                </div>
+
+                <div class="tartan-border">
+                    <p>
+                        <span class="fire-emoji">🔥</span> <b style="color: #FFD700; font-size: 16px;">Sláinte mhath!</b> <span class="fire-emoji">🔥</span>
+                    </p>
+                    <p>
+                        Дорогие друзья! Мы рады приветствовать вас на <b>официальном сайте</b> единственного
+                        настоящего шотландского паба <b>"Три Сестры"</b>! Наш паб был основан в
+                        <b style="color:#ffcc00;">1998 году</b> тремя сёстрами — Мэри, Эйлин и Фионой МакГрегор,
+                        потомственными владелицами пабов из Эдинбурга.
+                    </p>
+                    <p>
+                        У нас вы найдёте <b style="color:#ff6600;">более 50 сортов</b> шотландского и ирландского виски,
+                        <b style="color:#ff6600;">12 кранов</b> с лучшим элем и стаутом, а также настоящую шотландскую кухню,
+                        приготовленную по рецептам, которые передаются в семье МакГрегор из поколения в поколение!
+                    </p>
+                </div>
+
+                <hr class="hr-fancy">
+
+                <h3>🎵 Что вас ждёт у нас:</h3>
+                <ul class="hierarchical-list">
+                    <li>Настоящий шотландский хаггис и кулен скинк</li>
+                    <li>Коллекция single malt виски — более 50 наименований!</li>
+                    <li>Живая музыка: волынка и кельтский фолк каждую пятницу</li>
+                    <li>Дартс, пул и настольные игры</li>
+                    <li>Трансляции регби, футбола и крикета</li>
+                    <li>Тёплая атмосфера настоящего шотландского паба</li>
+                    <li>Уютный камин для холодных зимних вечеров <span class="fire-emoji">🔥</span></li>
+                </ul>
+
+                <hr class="hr-fancy">
+
+                <h3>📰 Ближайшие события:</h3>
+                <table class="menu-table">
+                    <tr>
+                        <th>Дата</th>
+                        <th>Событие</th>
+                        <th>Время</th>
+                    </tr>
+                    <tr>
+                        <td>19 марта</td>
+                        <td>Дартс-турнир "Кубок Трёх Сестёр" <span class="badge-new">NEW!</span></td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>21 марта</td>
+                        <td>Живая кельтская музыка — группа "Caledonia"</td>
+                        <td>21:00</td>
+                    </tr>
+                    <tr>
+                        <td>25 марта</td>
+                        <td>Вечер дегустации виски из региона Islay</td>
+                        <td>19:00</td>
+                    </tr>
+                    <tr>
+                        <td>28 марта</td>
+                        <td>Викторина "Что вы знаете о Шотландии?" 🏴󠁧󠁢󠁳󠁣󠁴󠁿</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>1 апреля</td>
+                        <td>Вечеринка "Fools & Ales" — пивной фестиваль</td>
+                        <td>18:00</td>
+                    </tr>
+                </table>
+
+                <hr class="hr-fancy">
+
+                <h3>📖 Гостевая книга (последние записи):</h3>
+
+                <div class="guestbook-line">
+                    <span class="author">Алексей_пиволюб:</span>
+                    <span class="date">11.03.2004, 23:15</span><br>
+                    Лучший паб в городе!!! Хаггис просто бомба!!! 🍺🍺🍺 Приду в пятницу на волынку!
+                </div>
+                <div class="guestbook-line">
+                    <span class="author">Мария К.:</span>
+                    <span class="date">10.03.2004, 19:42</span><br>
+                    Были с мужем на ужине Бёрнса — потрясающе! Спасибо за чудесный вечер и отличный виски!
+                </div>
+                <div class="guestbook-line">
+                    <span class="author">ScotchLover2004:</span>
+                    <span class="date">09.03.2004, 21:03</span><br>
+                    Попробовал Laphroaig Quarter Cask - торфяной, дымный, волшебный!!! 5 звёзд! ★★★★★
+                </div>
+                <div class="guestbook-line">
+                    <span class="author">Ирина_дартс:</span>
+                    <span class="date">08.03.2004, 17:30</span><br>
+                    С 8 марта, дорогие сёстры!!! Спасибо за цветы и комплимент от бара 💐
+                </div>
+                <div class="guestbook-line">
+                    <span class="author">BeerHunter:</span>
+                    <span class="date">06.03.2004, 22:18</span><br>
+                    Килкенни из крана — это нечто! В городе такого больше нигде не найдёшь. Рекомендую!
+                </div>
+
+                <br>
+                <div style="text-align: center;">
+                    <a href="#" style="font-size: 14px;" onclick="alert('Гостевая книга временно на реконструкции!'); return false;">
+                        ✏️ Оставить запись в гостевой книге ✏️
+                    </a>
+                </div>
+
+                <hr class="hr-fancy">
+
+                <h3>📍 Как нас найти:</h3>
+                <p>
+                    <b>Адрес:</b> г. Москва, ул. Рочдельская, д. 15<br>
+                    <b>Метро:</b> "Улица 1905 года" (5 минут пешком)<br>
+                    <b>Ориентир:</b> Красная вывеска с тремя кельтскими узлами
+                </p>
+                <div style="border: 2px inset #8B4513; background: #0a0500; padding: 15px; text-align: center;">
+                    <div class="ascii-art" style="font-size: 10px;">
+   Ул. Рочдельская
+══════════════╦════════════════
+              ║
+  Магазин     ║    [ТРИ СЕСТРЫ]  ◄── Мы тут!
+              ║        🍺
+══════════════╩════════════════
+   Переулок Столярный
+              ↓
+         Ст. м. "Ул. 1905 года"
+                    </div>
+                    <div style="font-size:11px; color:#886644; margin-top:8px;">
+                        Схема проезда. Интерактивная карта — <span class="construction">🚧 в разработке 🚧</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==================== PAGE 2: MENU ==================== -->
+            <div id="page-menu" class="page">
+
+                <h2>🍽️ Меню паба "Три Сестры"</h2>
+
+                <p><i>Все блюда готовятся из свежих продуктов по традиционным шотландским рецептам!</i></p>
+                <p style="font-size:12px; color:#ff6600;">Последнее обновление меню: 10 марта 2004 г.</p>
+
+                <hr class="hr-fancy">
+
+                <h3>🥘 Закуски и первые блюда:</h3>
+                <table class="menu-table">
+                    <tr>
+                        <th>Блюдо</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    <tr>
+                        <td><b>Кулен скинк</b></td>
+                        <td>Традиционный шотландский суп из копчёной пикши</td>
+                        <td>180 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Коктейль из креветок</b></td>
+                        <td>Королевские креветки с соусом Marie Rose</td>
+                        <td>220 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Скотч эгг</b> <span class="badge-new">HIT!</span></td>
+                        <td>Яйцо в мясной оболочке, обжаренное в сухарях</td>
+                        <td>150 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Луковые кольца</b></td>
+                        <td>В пивном кляре с чесночным соусом</td>
+                        <td>120 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Грибы на тосте</b></td>
+                        <td>Шампиньоны в сливочном соусе на ржаном тосте</td>
+                        <td>130 руб.</td>
+                    </tr>
+                </table>
+
+                <h3>🥩 Основные блюда:</h3>
+                <table class="menu-table">
+                    <tr>
+                        <th>Блюдо</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    <tr>
+                        <td><b>Хаггис</b> <span class="stars">★★★★★</span></td>
+                        <td>Легендарный шотландский хаггис с нипсом и таттисом!</td>
+                        <td>350 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Fish & Chips</b></td>
+                        <td>Треска в пивном кляре с картофелем фри</td>
+                        <td>280 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Shepherd's Pie</b></td>
+                        <td>Пастуший пирог с бараниной и пюре</td>
+                        <td>300 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Стейк Абердин-Ангус</b> <span class="badge-new">NEW!</span></td>
+                        <td>300г мраморной говядины на гриле, подаётся с овощами</td>
+                        <td>580 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Bangers & Mash</b></td>
+                        <td>Свиные колбаски с картофельным пюре и луковой подливой</td>
+                        <td>260 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Steak & Ale Pie</b></td>
+                        <td>Пирог с говядиной, тушённой в эле</td>
+                        <td>320 руб.</td>
+                    </tr>
+                </table>
+
+                <h3>🍺 Пиво (разливное):</h3>
+                <table class="menu-table">
+                    <tr>
+                        <th>Название</th>
+                        <th>Тип / Крепость</th>
+                        <th>0.5л</th>
+                    </tr>
+                    <tr>
+                        <td><b>Guinness</b></td>
+                        <td>Irish Stout, 4.2%</td>
+                        <td>180 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Kilkenny</b></td>
+                        <td>Irish Red Ale, 4.3%</td>
+                        <td>170 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Belhaven Best</b> <span class="stars">★★★★★</span></td>
+                        <td>Scottish Ale, 3.2%</td>
+                        <td>190 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Tennent's Lager</b></td>
+                        <td>Scottish Lager, 5.0%</td>
+                        <td>160 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Deuchars IPA</b></td>
+                        <td>India Pale Ale, 3.8%</td>
+                        <td>200 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Innis & Gunn</b> <span class="badge-new">NEW!</span></td>
+                        <td>Oak Aged Beer, 6.6%</td>
+                        <td>250 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>McEwan's Export</b></td>
+                        <td>Scottish Export Ale, 4.5%</td>
+                        <td>175 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Caledonian 80/-</b></td>
+                        <td>Scottish Heavy, 4.1%</td>
+                        <td>185 руб.</td>
+                    </tr>
+                </table>
+
+                <h3>🥃 Виски (избранное из нашей коллекции):</h3>
+                <table class="menu-table">
+                    <tr>
+                        <th>Название</th>
+                        <th>Регион / Выдержка</th>
+                        <th>50 мл</th>
+                    </tr>
+                    <tr>
+                        <td><b>Glenfiddich 12</b></td>
+                        <td>Speyside, 12 лет</td>
+                        <td>180 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Laphroaig 10</b></td>
+                        <td>Islay, 10 лет</td>
+                        <td>220 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Laphroaig 18</b> <span class="badge-new">NEW!</span></td>
+                        <td>Islay, 18 лет</td>
+                        <td>450 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Macallan 12</b> <span class="stars">★★★★★</span></td>
+                        <td>Speyside, 12 лет, sherry cask</td>
+                        <td>280 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Talisker 10</b></td>
+                        <td>Isle of Skye, 10 лет</td>
+                        <td>240 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Highland Park 12</b></td>
+                        <td>Orkney, 12 лет</td>
+                        <td>230 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Lagavulin 16</b></td>
+                        <td>Islay, 16 лет</td>
+                        <td>350 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Oban 14</b></td>
+                        <td>Western Highlands, 14 лет</td>
+                        <td>300 руб.</td>
+                    </tr>
+                </table>
+                <p style="font-size:12px; color:#886644; text-align:center;">
+                    Полный ассортимент виски (50+ наименований) — спрашивайте у бармена!<br>
+                    💡 Совет: попросите «карту виски» — наш бармен Дункан поможет подобрать напиток по вкусу!
+                </p>
+
+                <h3>🍰 Десерты:</h3>
+                <table class="menu-table">
+                    <tr>
+                        <th>Название</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    <tr>
+                        <td><b>Cranachan</b></td>
+                        <td>Шотландский десерт из овсянки, сливок, мёда и малины</td>
+                        <td>160 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Sticky Toffee Pudding</b></td>
+                        <td>Тёплый финиковый пудинг с ириской</td>
+                        <td>180 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Shortbread</b></td>
+                        <td>Традиционное шотландское песочное печенье</td>
+                        <td>90 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Whisky Cake</b> <span class="badge-new">HIT!</span></td>
+                        <td>Фирменный кекс, пропитанный виски Macallan</td>
+                        <td>200 руб.</td>
+                    </tr>
+                </table>
+
+                <hr class="hr-fancy">
+
+                <div class="tartan-border" style="text-align:center;">
+                    <h3 style="margin-top:0;">🎉 Специальное предложение!</h3>
+                    <p style="font-size: 16px;">
+                        <b style="color:#FFD700;">Бизнес-ланч:</b> Пн-Пт, с 12:00 до 15:00<br>
+                        Суп + основное блюдо + напиток = <b style="color:#ff0000; font-size: 20px;">250 руб.!</b>
+                    </p>
+                    <p style="font-size:12px; color:#886644;">
+                        * Состав бизнес-ланча меняется ежедневно. Уточняйте у официанта.
+                    </p>
+                </div>
+
+                <hr class="hr-fancy">
+
+                <h3>💌 Забронировать столик:</h3>
+                <div style="border: 2px inset #8B4513; background: #0a0500; padding: 15px;">
+                    <form onsubmit="alert('Спасибо! Ваша заявка принята. Мы перезвоним!'); return false;">
+                        <table cellpadding="4">
+                            <tr>
+                                <td>Ваше имя:</td>
+                                <td><input type="text" size="30" placeholder="Как вас зовут?"></td>
+                            </tr>
+                            <tr>
+                                <td>Телефон:</td>
+                                <td><input type="text" size="30" placeholder="(0XX) XXX-XX-XX"></td>
+                            </tr>
+                            <tr>
+                                <td>Дата и время:</td>
+                                <td><input type="text" size="30" placeholder="ДД.ММ.ГГГГ, ЧЧ:ММ"></td>
+                            </tr>
+                            <tr>
+                                <td>Кол-во гостей:</td>
+                                <td>
+                                    <select style="background:#1a0a00; border:2px inset #8B4513; color:#f0e0c0; padding:3px;">
+                                        <option>1-2</option>
+                                        <option>3-4</option>
+                                        <option>5-6</option>
+                                        <option>7-10</option>
+                                        <option>Более 10</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Пожелания:</td>
+                                <td><textarea rows="3" cols="30" placeholder="Особые пожелания..."></textarea></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="submit" value="📩 Отправить заявку"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+            </div>
+            <!-- END PAGES -->
+
+        </td>
+    </tr>
+
+    <!-- FOOTER -->
+    <tr>
+        <td colspan="2" class="footer-cell">
+            <div style="margin-bottom: 8px;">
+                Вы посетитель номер: <span class="counter-box" id="visitor-counter">000000</span>
+            </div>
+            <div>
+                © 1998–2004 Шотландский паб "Три Сестры". Все права защищены.<br>
+                Сайт создан в <b>FrontPage Express</b> и оптимизирован для <b>Internet Explorer 5.5+</b> / <b>Netscape Navigator 4.7+</b><br>
+                Разрешение экрана: <b>800×600</b> | Кодировка: <b>Windows-1251</b><br><br>
+                <a href="mailto:webmaster@3sisters.ru" class="email-link">📧 Написать вебмастеру</a> |
+                <a href="#" onclick="alert('Карта сайта в разработке!'); return false;">🗺️ Карта сайта</a> |
+                <a href="#" onclick="alert('Добавьте нас в Избранное: Ctrl+D'); return false;">⭐ В избранное</a>
+            </div>
+            <br>
+            <div style="font-size:10px; color:#554433;">
+                Все торговые марки принадлежат их владельцам. Чрезмерное употребление алкоголя вредит вашему здоровью.
+            </div>
+            <br>
+            <div>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%23eee' stroke='%23999' stroke-width='1'/%3E%3Ctext x='44' y='11' fill='%23333' font-size='7' font-family='Arial' text-anchor='middle' font-weight='bold'%3EHTML 4.01%3C/text%3E%3Ctext x='44' y='22' fill='%23333' font-size='7' font-family='Arial' text-anchor='middle'%3ETransitional%3C/text%3E%3C/svg%3E" alt="HTML 4.01">
+                &nbsp;
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%23006' stroke='%23009' stroke-width='1'/%3E%3Ctext x='44' y='11' fill='%23fff' font-size='8' font-family='Arial' text-anchor='middle' font-weight='bold'%3EMade with%3C/text%3E%3Ctext x='44' y='22' fill='%23ff0' font-size='7' font-family='Arial' text-anchor='middle'%3ENotepad :)%3C/text%3E%3C/svg%3E" alt="Made with Notepad">
+                &nbsp;
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%23030' stroke='%23060' stroke-width='1'/%3E%3Ctext x='44' y='11' fill='%2300ff00' font-size='7' font-family='monospace' text-anchor='middle'%3EY2K%3C/text%3E%3Ctext x='44' y='22' fill='%2300ff00' font-size='8' font-family='monospace' text-anchor='middle' font-weight='bold'%3ESAFE!%3C/text%3E%3C/svg%3E" alt="Y2K Safe">
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script>
+    // Page switching
+    function showPage(pageName) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-cell a').forEach(a => a.classList.remove('active'));
+        document.getElementById('page-' + pageName).classList.add('active');
+        document.getElementById('nav-' + pageName).classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    // Visitor counter animation
+    (function() {
+        const target = 15742 + Math.floor(Math.random() * 100);
+        const counter = document.getElementById('visitor-counter');
+        let current = 0;
+        const step = Math.ceil(target / 60);
+        const interval = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(interval);
+            }
+            counter.textContent = String(current).padStart(6, '0');
+        }, 30);
+    })();
+
+    // Status bar text (old-school effect)
+    const tips = [
+        "Добро пожаловать в паб Три Сестры!",
+        "Sláinte mhath! — За ваше здоровье!",
+        "Попробуйте наш знаменитый хаггис!",
+        "Более 50 сортов single malt виски!",
+        "Каждую пятницу — живая волынка!",
+    ];
+    let tipIndex = 0;
+    setInterval(() => {
+        try { window.status = tips[tipIndex]; } catch(e) {}
+        tipIndex = (tipIndex + 1) % tips.length;
+    }, 3000);
+</script>
+
+</body>
+</html>
